@@ -1,0 +1,10 @@
+<% title("Edit #{@job.title}") %>
+<h3 class="page-title">Edit job <small><%= @job.title %></small></h3>
+<p>
+  <%= link_to "Back to dashboard", admin_jobs_dashboard_path %>
+</p>
+<hr/>
+
+<%= render 'form' %>
+<hr/>
+<%= link_to "<i class='fa fa-minus-square'></i> Delete job".html_safe, admin_job_path(@job), method: :delete, data:{confirm: "Are you sure?"}, class: "btn btn-small btn-danger" %>

@@ -1,0 +1,9 @@
+<% title("Jobs Dashboard") %>
+<h3 class="page-title">Jobs <small>Dashboard</small></h3>
+<p><%= link_to "Back to Admin", admin_root_path %></p>
+<hr/>
+<div class="row">
+  <div class="col-sm-4">Published: <%= link_to "#{pluralize(@published_job_count, 'job')}", admin_jobs_path %></div>
+  <div class="col-sm-4">Drafts: <%= link_to "#{pluralize(@draft_job_count, 'draft')}", admin_jobs_drafts_path %></div>
+  <div class="col-sm-4"><%= link_to "New job", new_admin_job_path %></div>
+</div>

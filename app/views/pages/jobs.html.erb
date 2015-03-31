@@ -1,0 +1,18 @@
+<% title("Jobs") %>
+<h1>Jobs</h1>
+
+<% @jobs.each do |job| %>
+
+<div class="title-box">
+  <p>
+    <%= link_to "#{job.title}", job_path(job.slug) %> <br/>
+    <span><small><em><%= time_ago_in_words(job.updated_at) %> ago</em></small></span>
+  </p>
+
+</div>
+
+<% end %>
+
+<div class="pagination-control text-center">
+  <%= paginate @jobs %>
+</div>

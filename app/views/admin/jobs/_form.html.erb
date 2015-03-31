@@ -1,12 +1,12 @@
-<% if @post.errors.any? %>
+<% if @job.errors.any? %>
 <ul>
-  <% @post.errors.full_messages.each do |msg| %>
+  <% @job.errors.full_messages.each do |msg| %>
   <li><%= msg %></li>
   <% end %>
 </ul>
 <% end %>
 
-<%= form_for [:admin, @post], role: "form" do |f| %>
+<%= form_for [:admin, @job], role: "form" do |f| %>
 
 <div class="form-group">
   <%= f.label :title %>
@@ -21,7 +21,7 @@
   <%= f.label :content_md, "Content" %>
   <div class="row">
     <div class="col-xs-12">
-      <%= f.text_area :content_md, rows: 15, class: "form-control monospaced-control", placeholder: "Post content (Markdown format)..." %>
+      <%= f.text_area :content_md, rows: 15, class: "form-control monospaced-control", placeholder: "Job content (Markdown format)..." %>
     </div>
   </div>
 </div>
@@ -47,7 +47,7 @@
   <div class="col-xs-12 padded">
     <button class='btn btn-primary'>
       <i class='fa fa-plus-square'></i> Publish
-    </button> - <%= link_to "Cancel", admin_posts_dashboard_path %>
+    </button> - <%= link_to "Cancel", admin_jobs_dashboard_path %>
   </div>
 </div>
 

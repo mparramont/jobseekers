@@ -1,0 +1,23 @@
+<% title("Published jobs") %>
+<h3 class="page-title">Jobs <small>Published</small></h3>
+<p><%= link_to "Back to dashboard", admin_jobs_dashboard_path %></p>
+<hr/>
+
+<p class="pagination-summary"><%= page_entries_info @jobs %></p>
+<%= paginate @jobs %>
+
+<hr/>
+
+<ul class="fa-ul">
+  <% @jobs.each do |job| %>
+  <li class="margin-md-down">
+    <i class="fa fa-arrow-circle-o-right small"></i>&nbsp;&nbsp;
+    <%= link_to job.title, edit_admin_job_path(job.slug) %> <br/>
+    <small class="x-small-text">about <%= time_ago_in_words(job.updated_at) %> ago</small>
+  </li>
+  <% end %>
+</ul>
+
+<hr/>
+
+<%= paginate @jobs %>

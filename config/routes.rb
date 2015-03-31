@@ -4,17 +4,17 @@ Jobseekers::Application.routes.draw do
   get "inside", to: "pages#inside", as: "inside"
   get "/contact", to: "pages#contact", as: "contact"
   post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
-  
-  get "posts", to: "pages#posts", as: "posts"
-  get "posts/:id", to: "pages#show_post", as: "post"
+
+  get "jobs", to: "pages#jobs", as: "jobs"
+  get "jobs/:id", to: "pages#show_job", as: "job"
   devise_for :users
 
   namespace :admin do
     root "base#index"
     resources :users
-    get "posts/drafts", to: "posts#drafts", as: "posts_drafts"
-    get "posts/dashboard", to: "posts#dashboard", as: "posts_dashboard"
-    resources :posts
+    get "jobs/drafts", to: "jobs#drafts", as: "jobs_drafts"
+    get "jobs/dashboard", to: "jobs#dashboard", as: "jobs_dashboard"
+    resources :jobs
   end
 
 end
