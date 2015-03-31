@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331115153) do
+ActiveRecord::Schema.define(version: 20150331140820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "educations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.string   "institution"
+    t.string   "grade"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "educations", ["user_id"], name: "index_educations_on_user_id", using: :btree
+
+  create_table "employments", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "key_skills"
+    t.datetime "date"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "employments", ["user_id"], name: "index_employments_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -63,6 +88,14 @@ ActiveRecord::Schema.define(version: 20150331115153) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "country"
+    t.string   "location"
+    t.string   "linkedin_url"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "google_plus_url"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -71,4 +104,6 @@ ActiveRecord::Schema.define(version: 20150331115153) do
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "educations", "users"
+  add_foreign_key "employments", "users"
 end

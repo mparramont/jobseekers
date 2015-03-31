@@ -1,4 +1,8 @@
 Jobseekers::Application.routes.draw do
+  resources :employments
+
+  resources :educations
+
   root "pages#home"
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
