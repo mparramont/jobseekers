@@ -20,7 +20,15 @@ class ApplicationController < ActionController::Base
       :email,
       :password,
       :password_confirmation,
-      :current_password
+      :current_password,
+      :first_name,
+      :last_name,
+      :country,
+      :location,
+      :linkedin_url,
+      :facebook_url,
+      :twitter_url,
+      :google_plus_url
       )
     }
   end
