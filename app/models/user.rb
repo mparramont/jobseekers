@@ -11,10 +11,9 @@ class User < ActiveRecord::Base
       "#{username}"
     end
   end
-  
-# Relations
-has_many :jobs
 
+  has_many :employments
+  has_many :educations
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

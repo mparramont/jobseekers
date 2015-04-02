@@ -1,4 +1,38 @@
-<% title("Protected page") %>
-<h1>Protected Page</h1>
-<p>This page is only visible to signed in users. Edit it at: <em>views/pages/inside.html.erb</em></p>
-<p>You can change the page users see after successfully signing in within the method <em>after_sign_in_path_for</em> inside <strong>application_controller.rb</strong></p>
+<% title("Your resume") %>
+<h1>Your resume</h1>
+
+<h2>Profile <small><%= link_to 'edit', edit_user_registration_path %></small></h2>
+<p>Email: <%= current_user.email %></p>
+<p>First name: <%= current_user.first_name %></p>
+<p>Last name: <%= current_user.last_name %></p>
+<p>Country: <%= current_user.country %></p>
+<p>Location: <%= current_user.location %></p>
+<p>LinkedIn URL: <%= current_user.linkedin_url %></p>
+<p>Facebook URL: <%= current_user.facebook_url %></p>
+<p>Twitter URL: <%= current_user.twitter_url %></p>
+<p>Google+ URL: <%= current_user.google_plus_url %></p>
+
+<h2>Education <small><%= link_to 'add an entry', new_education_path %></small></h2>
+<% if current_user.educations.count == 0 %>
+  No entries yet, <%= link_to 'add one!', new_education_path %>
+<% else %>
+  <% current_user.educations.each do |education| %>
+    <p> <h4><%= education.name %><small> <%= link_to 'edit', edit_education_path(education) %></small></h4></p>
+    <p> Date: <%= education.date %></p>
+    <p> Institution: <%= education.institution %></p>
+    <p> Grade: <%= education.grade %></p>
+    <p> Description: <%= education.description %></p>
+  <% end %>
+<% end %>
+
+<h2>Job experience <small><%= link_to 'add an entry', new_employment_path %></small></h2>
+<% if current_user.employments.count == 0 %>
+  No entries yet, <%= link_to 'add one!', new_employment_path %>
+<% else %>
+  <% current_user.employments.each do |employment| %>
+    <p> <h4><%= employment.title %><small> <%= link_to 'edit', edit_employment_path(employment) %></small></h4></p>
+    <p> Date: <%= employment.date %></p>
+    <p> Description: <%= employment.description %></p>
+    <p> Key skills: <%= employment.key_skills %></p>
+  <% end %>
+<% end %>
