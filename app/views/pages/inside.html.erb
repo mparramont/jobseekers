@@ -17,8 +17,15 @@
   No entries yet, <%= link_to 'add one!', new_education_path %>
 <% else %>
   <% current_user.educations.each do |education| %>
-    <p> <h4><%= education.name %><small> <%= link_to 'edit', edit_education_path(education) %></small></h4></p>
-    <p> Date: <%= education.date %></p>
+    <p>
+      <h4>
+        <%= education.name %>
+        <small> <%= link_to 'edit', edit_education_path(education) %></small>
+        <small>| <%= link_to 'remove', education, method: :delete, data: { confirm: 'Are you sure you want to remove this education?' } %></small>
+      </h4>
+    </p>
+    <p> Start date: <%= education.start_date %></p>
+    <p> End date: <%= education.end_date %></p>
     <p> Institution: <%= education.institution %></p>
     <p> Grade: <%= education.grade %></p>
     <p> Description: <%= education.description %></p>
@@ -30,8 +37,15 @@
   No entries yet, <%= link_to 'add one!', new_employment_path %>
 <% else %>
   <% current_user.employments.each do |employment| %>
-    <p> <h4><%= employment.title %><small> <%= link_to 'edit', edit_employment_path(employment) %></small></h4></p>
-    <p> Date: <%= employment.date %></p>
+    <p>
+      <h4>
+        <%= employment.title %>
+        <small> <%= link_to 'edit', edit_employment_path(employment) %></small>
+        <small>| <%= link_to 'remove', employment, method: :delete, data: { confirm: 'Are you sure you want to remove this employment?' } %></small>
+      </h4>
+    </p>
+    <p> Start date: <%= employment.start_date %></p>
+    <p> End date: <%= employment.end_date %></p>
     <p> Description: <%= employment.description %></p>
     <p> Key skills: <%= employment.key_skills %></p>
   <% end %>

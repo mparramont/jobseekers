@@ -1,16 +1,5 @@
 class EmploymentsController < ApplicationController
-  before_action :set_employment, only: [:show, :edit, :update, :destroy]
-
-  # GET /employments
-  # GET /employments.json
-  def index
-    @employments = Employment.all
-  end
-
-  # GET /employments/1
-  # GET /employments/1.json
-  def show
-  end
+  before_action :set_employment, only: [:edit, :update, :destroy]
 
   # GET /employments/new
   def new
@@ -24,11 +13,11 @@ class EmploymentsController < ApplicationController
   # POST /employments
   # POST /employments.json
   def create
-    @employment = Employment.new(employment_params)
+    @employment = Employment.new(employment_params.merge!(user: current_user))
 
     respond_to do |format|
       if @employment.save
-        format.html { redirect_to @employment, notice: 'Employment was successfully created.' }
+        format.html { redirect_to inside_path, notice: 'Employment was successfully created.' }
         format.json { render :show, status: :created, location: @employment }
       else
         format.html { render :new }
@@ -41,8 +30,8 @@ class EmploymentsController < ApplicationController
   # PATCH/PUT /employments/1.json
   def update
     respond_to do |format|
-      if @employment.update(employment_params)
-        format.html { redirect_to @employment, notice: 'Employment was successfully updated.' }
+      if @employment.update(employment_params.merge!(user: current_user))
+        format.html { redirect_to inside_path, notice: 'Employment was successfully updated.' }
         format.json { render :show, status: :ok, location: @employment }
       else
         format.html { render :edit }
@@ -56,7 +45,7 @@ class EmploymentsController < ApplicationController
   def destroy
     @employment.destroy
     respond_to do |format|
-      format.html { redirect_to employments_url, notice: 'Employment was successfully destroyed.' }
+      format.html { redirect_to inside_path, notice: 'Employment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +53,11 @@ class EmploymentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_employment
-      @employment = Employment.find(params[:id])
+      @employment = Employment.where(user: current_user).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employment_params
-      params.require(:employment).permit(:title, :description, :key_skills, :date, :user_id)
+      params.require(:employment).permit(:title, :description, :key_skills, :start_date, :end_date)
     end
 end
