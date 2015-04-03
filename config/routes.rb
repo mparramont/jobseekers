@@ -1,4 +1,6 @@
 Jobseekers::Application.routes.draw do
+  resources :categories
+
   resources :employments
 
   resources :educations

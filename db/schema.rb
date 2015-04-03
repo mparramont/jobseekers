@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403102700) do
+ActiveRecord::Schema.define(version: 20150403114611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "educations", force: :cascade do |t|
     t.string   "name"
@@ -60,13 +66,22 @@ ActiveRecord::Schema.define(version: 20150403102700) do
     t.string   "title"
     t.text     "content_md"
     t.text     "content_html"
-    t.boolean  "draft",        default: false
+    t.boolean  "draft",                  default: false
     t.integer  "user_id"
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "keywords"
+    t.string   "location"
+    t.integer  "job_length"
+    t.integer  "job_type"
+    t.boolean  "suitable_for_graduates"
+    t.integer  "category_id"
+    t.integer  "salary"
+    t.string   "reference"
   end
 
+  add_index "jobs", ["category_id"], name: "index_jobs_on_category_id", using: :btree
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -108,4 +123,5 @@ ActiveRecord::Schema.define(version: 20150403102700) do
 
   add_foreign_key "educations", "users"
   add_foreign_key "employments", "users"
+  add_foreign_key "jobs", "categories"
 end

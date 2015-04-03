@@ -25,7 +25,7 @@ class Admin::JobsController < Admin::BaseController
   end
 
   def create
-    @job = Job.new(job_params)
+    @job = Job.new(job_params.merge!(user: current_user))
     @job.user_id = current_user.id
     if @job.save
       redirect_to admin_jobs_dashboard_path, notice: "New job published."
@@ -40,7 +40,7 @@ class Admin::JobsController < Admin::BaseController
 
   def update
     @job.slug = nil
-    if @job.update(job_params)
+    if @job.update(job_params.merge!(user: current_user))
       redirect_to admin_jobs_dashboard_path, notice: "Job successfully edited."
     else
       flash[:alert] = "The job was not edited."
@@ -57,15 +57,23 @@ class Admin::JobsController < Admin::BaseController
   private
 
   def set_job
-    @job = Job.friendly.find(params[:id])
+    @job = Job.where(user: current_user).friendly.find(params[:id])
   end
 
   def job_params
     params.require(:job).permit(
-    :title,
-    :content_md,
-    :draft,
-    :updated_at
+      :title,
+      :content_md,
+      :draft,
+      :updated_at,
+      :keywords,
+      :location,
+      :job_length,
+      :job_type,
+      :suitable_for_graduates,
+      :category_id,
+      :salary,
+      :reference
     )
   end
 
