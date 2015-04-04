@@ -8,7 +8,6 @@ admin = User.new(
     password: "1234",
     admin: true
 )
-admin.skip_confirmation!
 admin.save!
 
 # Categories
@@ -57,7 +56,6 @@ if Rails.env.development?
         email: "user#{i}@example.com",
         password: "1234"
     )
-    u.skip_confirmation!
     u.save!
 
     puts "#{i} test users created..." if (i % 5 == 0)
