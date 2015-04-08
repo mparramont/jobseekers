@@ -16,7 +16,7 @@
 <% if current_user.educations.count == 0 %>
   No entries yet, <%= link_to 'add one!', new_education_path %>
 <% else %>
-  <% current_user.educations.each do |education| %>
+  <% current_user.educations.order(start_date: :desc).each do |education| %>
     <p>
       <h4>
         <%= education.name %>
