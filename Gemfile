@@ -26,6 +26,8 @@ gem 'font-awesome-sass', '4.3.2.1'
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.4.1'
 
+gem "validate_url"
+
 group :development, :test do
   gem 'byebug', '4.0.4'
   gem 'web-console', '2.1.2'

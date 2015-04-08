@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
   validates :username, length: { in: 4..15 }
   # :email
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates_url :linkedin_url, allow_blank: true
+  validates_url :facebook_url, allow_blank: true
+  validates_url :twitter_url, allow_blank: true
+  validates_url :google_plus_url, allow_blank: true
 
   def self.paged(page_number)
     order(admin: :desc, username: :asc).page page_number
