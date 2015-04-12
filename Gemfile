@@ -60,3 +60,6 @@ end
 group :production do
   gem 'unicorn'
 end
+
+# CountrySelect https://github.com/rails/country_select
+gem 'country_select', github: 'stefanpenner/country_select'

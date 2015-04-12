@@ -67,7 +67,7 @@ class Admin::JobsController < Admin::BaseController
       :draft,
       :updated_at,
       :keywords,
-      :location,
+      :city,
       :job_length,
       :job_type,
       :suitable_for_graduates,

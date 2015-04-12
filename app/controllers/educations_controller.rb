@@ -18,7 +18,7 @@ class EducationsController < ApplicationController
     respond_to do |format|
       if @education.save
         format.html { redirect_to inside_path, notice: 'Education was successfully created.' }
-        format.json { render :show, status: :created, location: @education }
+        format.json { render :show, status: :created, city: @education }
       else
         format.html { render :new }
         format.json { render json: @education.errors, status: :unprocessable_entity }
@@ -32,7 +32,7 @@ class EducationsController < ApplicationController
     respond_to do |format|
       if @education.update(education_params.merge!(user: current_user))
         format.html { redirect_to inside_path, notice: 'Education was successfully updated.' }
-        format.json { render :show, status: :ok, location: @education }
+        format.json { render :show, status: :ok, city: @education }
       else
         format.html { render :edit }
         format.json { render json: @education.errors, status: :unprocessable_entity }

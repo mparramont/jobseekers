@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
       :first_name,
       :last_name,
       :country,
-      :location,
+      :city,
       :linkedin_url,
       :facebook_url,
       :twitter_url,
