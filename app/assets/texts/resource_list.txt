@@ -1,0 +1,185 @@
+language list
+
+deutsch
+english
+espaÒol
+filipino
+franÁais
+italiano
+portuguÍs
+svenska
+t¸rkÁe
+
+
+location list (country & cities)
+
+uk- 
+aberdeen
+bath
+belfast
+birmingham
+brighton
+bristol
+cambridge
+cardiff / wales
+coventry
+derby
+devon/cornwall
+dundee
+east anglia
+east midlands
+edinburgh
+essex
+glasgow
+hampshire
+kent
+leeds
+liverpool
+london
+manchester
+newcastle
+nottingham
+oxford
+sheffield
+
+europe popular cities-
+amsterdam
+berlin
+brussels
+budapest
+copenhagen
+cÙte d'azur
+dublin
+edinburgh
+florence
+london
+munich
+oslo
+oxford
+paris
+prague
+rome
+stockholm
+venice/veneto
+
+
+us/ca- 
+boston
+chicago
+los angeles
+miami
+montrÈal
+new york
+seattle
+sf bay area
+toronto
+vancouver
+wash dc
+
+
+africa- 
+egypt
+ethiopia
+ghana
+kenya
+morocco
+south africa
+tunisia
+
+
+americas- 
+argentina
+bolivia
+brazil
+canada
+caribbean
+chile
+colombia
+costa rica
+dom republic
+ecuador
+el salvador
+guatemala
+mexico
+nicaragua
+panama
+peru
+puerto rico
+united states
+uruguay
+us virgin islands
+venezuela
+
+
+asia- 
+bangladesh
+china
+hong kong
+india
+indonesia
+iran
+iraq
+israel
+japan
+kuwait
+lebanon
+malaysia
+pakistan
+philippines
+russia
+singapore
+south korea
+taiwan
+thailand
+turkey
+uae
+vietnam
+west bank
+
+europe- 
+austria
+belgium
+bulgaria
+croatia
+czech republic
+denmark
+finland
+france
+germany
+greece
+hungary
+iceland
+ireland
+italy
+luxembourg
+netherlands
+norway
+poland
+portugal
+romania
+russia
+spain
+sweden
+switzerland
+turkey
+ukraine
+united kingdom
+
+
+middle east- 
+egypt
+iraq
+israel
+kuwait
+lebanon
+turkey
+uae
+west bank
+
+
+
+oceania-
+australia
+guam
+new zealand
+philippines
