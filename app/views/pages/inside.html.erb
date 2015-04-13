@@ -5,7 +5,7 @@
 <p>Email: <%= current_user.email %></p>
 <p>First name: <%= current_user.first_name %></p>
 <p>Last name: <%= current_user.last_name %></p>
-<p>Country: <%= ISO3166::Country.find_country_by_alpha2(current_user.country).name %></p>
+<p>Country: <%= ISO3166::Country.find_country_by_alpha2(current_user.country).try(:name) || current_user.country %></p>
 <p>City: <%= current_user.city %></p>
 <p>LinkedIn URL: <%= current_user.linkedin_url %></p>
 <p>Facebook URL: <%= current_user.facebook_url %></p>

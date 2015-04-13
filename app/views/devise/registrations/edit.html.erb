@@ -74,7 +74,10 @@
       <%= f.label :country %>
       <div class="row">
         <div class="col-sm-6">
-          <%= f.country_select :country, priority_countries: ["GB", "US"], include_blank: true, class: "form-control" %>
+          <%= f.country_select :country,
+                               { priority_countries: ["GB", "US"],
+                                 include_blank: true },
+                               { class: "form-control" } %>
         </div>
       </div>
     </div>
