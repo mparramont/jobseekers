@@ -4,7 +4,7 @@ TODO
 * [ ] remove education and employment index views
 
 User
-* [ ] Country: should be drop down or autofill
+* [x] Country: should be drop down or autofill
 * [ ] Location: change this to city, and should be autofill, I'll email you a list of cities
 * [x] The social network links should only accept URLS
 Education
