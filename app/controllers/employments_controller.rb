@@ -18,7 +18,7 @@ class EmploymentsController < ApplicationController
     respond_to do |format|
       if @employment.save
         format.html { redirect_to inside_path, notice: 'Employment was successfully created.' }
-        format.json { render :show, status: :created, location: @employment }
+        format.json { render :show, status: :created, city: @employment }
       else
         format.html { render :new }
         format.json { render json: @employment.errors, status: :unprocessable_entity }
@@ -32,7 +32,7 @@ class EmploymentsController < ApplicationController
     respond_to do |format|
       if @employment.update(employment_params.merge!(user: current_user))
         format.html { redirect_to inside_path, notice: 'Employment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @employment }
+        format.json { render :show, status: :ok, city: @employment }
       else
         format.html { render :edit }
         format.json { render json: @employment.errors, status: :unprocessable_entity }

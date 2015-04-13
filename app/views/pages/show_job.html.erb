@@ -3,7 +3,7 @@
     <h2><%= @job.title %></h2>
     <p><%= @job.user_id %></p>
     <p><b>Keywords:</b><br> <%= @job.keywords %></p>
-    <p><b>Location:</b><br> <%= @job.location %></p>
+    <p><b>City:</b><br> <%= @job.city %></p>
     <p><b>Job type:</b> <%= @job.job_length.humanize %>, <%= @job.job_type.humanize %></p>
     <% if @job.suitable_for_graduates %>
       <p><b>Suitable for graduates:</b> ✓</p>

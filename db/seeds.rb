@@ -71,7 +71,7 @@ if Rails.env.development?
       content_md: (1..3).map { Faker::Lorem.paragraph(10) }.join("\n\n"),
       user: admin,
       keywords: (1..5).map { Faker::Hacker.adjective }.join(', '),
-      location: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+      city: "#{Faker::Address.street_address}, #{Faker::Address.city}",
       job_length: [:permanent, :temporary, :contract].sample,
       job_type: [:full_time, :part_time].sample,
       suitable_for_graduates: i % 3 == 0,
