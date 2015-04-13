@@ -86,7 +86,7 @@
       <%= f.label :city %>
       <div class="row">
         <div class="col-sm-6">
-          <%= f.select :city, options_for_select(['Aberdeen', 'Bath', 'Belfast', 'Birmingham', 'Brighton', 'Bristol', 'Cambridge', 'Cardiff / Wales', 'Coventry', 'Derby', 'Devon / Cornwall', 'Dundee', 'East Anglia', 'East Midlands', 'Edinburgh', 'Essex', 'Glasgow', 'Hampshire', 'Kent', 'Leeds', 'Liverpool', 'London', 'Manchester', 'Newcastle', 'Nottingham', 'Oxford', 'Sheffield', 'Amsterdam', 'Berlin', 'Brussels', 'Budapest', 'Copenhagen', 'Côte D\gi'Azur', 'Dublin', 'Florence', 'Munich', 'Oslo', 'Paris', 'Prague', 'Rome', 'Stockholm', 'Venice / Veneto', 'Boston', 'Chicago', 'Los Angeles', 'Miami', 'Montreal', 'New York', 'Seattle', 'Sf Bay Area', 'Toronto', 'Vancouver', 'Washington DC']), class: "form-control monospaced-control" %>
+          <%= f.select :city, grouped_options_for_select([['UK', ['Aberdeen', 'Bath', 'Belfast', 'Birmingham', 'Brighton', 'Bristol', 'Cambridge', 'Cardiff / Wales', 'Coventry', 'Derby', 'Devon / Cornwall', 'Dundee', 'East Anglia', 'East Midlands', 'Edinburgh', 'Essex', 'Glasgow', 'Hampshire', 'Kent', 'Leeds', 'Liverpool', 'London', 'Manchester', 'Newcastle', 'Nottingham', 'Oxford', 'Sheffield']], ['Europe', ['Amsterdam', 'Berlin', 'Brussels', 'Budapest', 'Copenhagen', 'Côte d\'Azur', 'Dublin', 'Edinburgh', 'Florence', 'London', 'Munich', 'Oslo', 'Oxford', 'Paris', 'Prague', 'Rome', 'Stockholm', 'Venice / Veneto']], ['USA/Canada', ['Boston', 'Chicago', 'Los Angeles', 'Miami', 'Montreal', 'New York', 'Seattle', 'Sf Bay Area', 'Toronto', 'Vancouver', 'Washington DC']]]), {}, {class: "form-control"} %>
           </div>
       </div>
     </div>
