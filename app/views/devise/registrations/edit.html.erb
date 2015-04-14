@@ -86,7 +86,10 @@
       <%= f.label :city %>
       <div class="row">
         <div class="col-sm-6">
-          <%= f.text_field :city, class: "form-control" %>
+          <%= f.select :city,
+                        grouped_options_for_select(City.groupedlist),
+                        {},
+                        {class: "form-control"} %>
           </div>
       </div>
     </div>

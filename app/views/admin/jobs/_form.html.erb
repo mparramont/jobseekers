@@ -39,7 +39,10 @@
   <%= f.label :city %>
   <div class="row">
     <div class="col-xs-12">
-      <%= f.text_field :city, class: "form-control monospaced-control", placeholder: "Street, , postcode…" %>
+      <%= f.select :city,
+                    grouped_options_for_select(City.groupedlist),
+                    {},
+                    {class: "form-control"} %>
     </div>
   </div>
 </div>
