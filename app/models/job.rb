@@ -9,6 +9,8 @@ class Job < ActiveRecord::Base
 
   validates :title, presence: true, length: { maximum: 100 }, uniqueness: true
   validates :content_md, presence: true
+  validates :keywords, format: {with: /\A([[:alnum:]]+)(,\s*[[:alnum:]]+)*\z/i,
+                                message: "can contain only numbers and letters and must be separated by a comma."}
 
   paginates_per 30
 
