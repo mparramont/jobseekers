@@ -1,7 +1,7 @@
 TODO
-* [ ] add end date for education and employment
-* [ ] link education and employment to current user
-* [ ] remove education and employment index views
+* [x] add end date for education and employment
+* [x] link education and employment to current user
+* [x] remove education and employment index views
 
 User
 * [x] Country: should be drop down or autofill
@@ -15,6 +15,6 @@ Employment
 * [x] Change 'Title' to 'Job Title'
 Posting jobs
 * [x] Location: change this to city, and should be autofill, I'll email you a list of cities
-* [ ] Keywords, should only accept entries which are followed by a comma
+* [x] Keywords, should only accept entries which are followed by a comma
 * [x] salary should only accept numbers
 * [x] published date, should not be able to select this. It should be invisible to the job poster. It gets stored
